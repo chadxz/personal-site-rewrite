@@ -1,0 +1,12 @@
+{
+  "name": "personal-site-rewrite",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "gulp-connect": "~1.0.6",
+    "gulp": "~3.5.5"
+  },
+  "author": "Chad McElligott <chad.mcelligott@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "personal-site-rewrite",
+  "version": "0.0.1",
+  "authors": [
+    "Chad McElligott <chad.mcelligott@gmail.com"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.0",
+    "requirejs-text": "~2.0.10",
+    "requirejs": "~2.1.11"
+  }
+}
