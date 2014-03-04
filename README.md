@@ -10,5 +10,6 @@ To run the site in it's current state:
 
 ```shell
 npm install
+bower install
 gulp
 ```
