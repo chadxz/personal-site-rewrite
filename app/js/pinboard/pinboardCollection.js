@@ -7,14 +7,7 @@ define([
   'use strict';
   var PinboardCollection = Backbone.Collection.extend({
     model: PinboardModel,
-
-    initialize: function () {
-      var pins = [1,2,3].map(function (i) {
-        return new PinboardModel({ title: 'pin' + i });
-      });
-
-      this.add(pins);
-    }
+    url: '/pinboard'
   });
 
   return PinboardCollection;

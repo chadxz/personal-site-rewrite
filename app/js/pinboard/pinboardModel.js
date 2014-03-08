@@ -6,7 +6,8 @@ define([
   'use strict';
   var PinboardModel = Backbone.Model.extend({
     defaults: {
-      title: ''
+      href: '',
+      description: ''
     }
   });
 

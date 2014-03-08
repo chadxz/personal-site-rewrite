@@ -8,11 +8,14 @@ define([
 ], function ($, _, Backbone, PinboardCollection, PinboardView, pinboardListTemplate) {
   'use strict';
   var PinboardListView = Backbone.View.extend({
-    url: '/pinboard',
+
     template: _.template(pinboardListTemplate),
 
     initialize: function () {
       this.collection = new PinboardCollection();
+      var xhr = this.collection.fetch().then(function () {
+        this.render();
+      }.bind(this));
     },
 
     render: function () {

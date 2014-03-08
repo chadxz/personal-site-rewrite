@@ -10,8 +10,6 @@ define([
       var pinboardListView = new PinboardListView({
         el: $('#pinboardList')
       });
-
-      pinboardListView.render();
     }
   };
 });
