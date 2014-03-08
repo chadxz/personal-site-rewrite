@@ -6,9 +6,9 @@ define([
   'pinboard/pinboardView',
   'text!pinboard/pinboardList.html',
 ], function ($, _, Backbone, PinboardCollection, PinboardView, pinboardListTemplate) {
-
+  'use strict';
   var PinboardListView = Backbone.View.extend({
-
+    url: '/pinboard',
     template: _.template(pinboardListTemplate),
 
     initialize: function () {
