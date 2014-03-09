@@ -3,27 +3,23 @@ require.config({
     jquery: '/components/jquery/dist/jquery',
     underscore: '/components/underscore/underscore',
     backbone: '/components/backbone/backbone',
-    text: '/components/requirejs-text/text'
+    text: '/components/requirejs-text/text',
+    moment: '/components/moment/moment',
+    'backbone-computedfields': '/components/backbone-computedfields/lib/amd/backbone.computedfields',
+  },
+  shim: {
+    moment: {
+      exports: 'moment'
+    }
   }
 });
 
 require([
-  'backbone',
-  'underscore',
   'app',
-  'config'
-], function (Backbone, _, App, config) {
+  'backbone-baseurl', // modifies Backbone.sync to set a baseurl
+  'backbone-fetchevent', // adds a 'fetch' event to Backbone Model/Collection.fetch
+  'backbone-computedfields' // adds Backbone.ComputedFields class
+], function (App) {
   'use strict';
-
-  // set base api url on all sync operations
-  var backboneSync = Backbone.sync;
-  Backbone.sync = function (method, model, options) {
-    options = _.extend(options, {
-        url: config.api.url + (_.isFunction(model.url) ? model.url() : model.url)
-    });
-
-    return backboneSync(method, model, options);
-  };
-
   App.initialize();
 });

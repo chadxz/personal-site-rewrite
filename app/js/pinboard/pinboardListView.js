@@ -3,37 +3,45 @@ define([
   'underscore',
   'backbone',
   'pinboard/pinboardCollection',
-  'pinboard/pinboardView',
-  'text!pinboard/pinboardList.html',
-], function ($, _, Backbone, PinboardCollection, PinboardView, pinboardListTemplate) {
+  'pinboard/pinboardItemView',
+  'text!pinboard/pinboardLoading.html',
+  'text!pinboard/pinboardList.html'
+], function ($, _, Backbone, PinboardCollection,
+  PinboardItemView, pinboardLoadingTemplate, pinboardListTemplate) {
   'use strict';
+
   var PinboardListView = Backbone.View.extend({
 
     template: _.template(pinboardListTemplate),
 
+    loadingTemplate: _.template(pinboardLoadingTemplate),
+
     initialize: function () {
       this.collection = new PinboardCollection();
-      var xhr = this.collection.fetch().then(function () {
-        this.render();
-      }.bind(this));
+
+      // render 'loading' template when collection is loading
+      this.collection.on('fetch', function () {
+        this.$el.html(this.loadingTemplate());
+      }, this);
     },
 
     render: function () {
-      this.$el.empty();
-
-      this.collection.each(function (item) {
-        this.renderItem(item);
-      }, this);
+      this.collection.fetch({ data: { limit: 5 } }).then(function () {
+        this.$el.html(this.template());
+        this.collection.each(function (item) {
+          this.renderItem(item);
+        }, this);
+      }.bind(this));
 
       return this;
     },
 
     renderItem: function (item) {
-      var pinboardView = new PinboardView({
+      var pinboardItemView = new PinboardItemView({
         model: item
       });
 
-      this.$el.append(pinboardView.render().el);
+      this.$('#pinboardItems').append(pinboardItemView.render().el);
     }
   });
 

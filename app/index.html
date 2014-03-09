@@ -1,8 +1,35 @@
 <html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chad's Website</title>
+    <!-- css start -->
+    <link href="/components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/components/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/css/site.css" rel="stylesheet" />
+    <!-- css end -->
+</head>
 <body>
-  <h1>Pinboard items</h1>
-  <div id="pinboardList"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <header>
+          <h3 class="page-title">
+            <a href="/">Chad's Website</a>
+          </h3>
+        </header>
+        <section id="content">
+          <div class="row">
+            <div id="pinboardWidget" class="col-xs-12"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 
+  <!-- scripts start -->
   <script data-main="js/bootstrap.js" src="/components/requirejs/require.js"></script>
+  <!-- scripts end -->
 </body>
 </html>

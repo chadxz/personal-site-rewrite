@@ -2,14 +2,15 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'pinboard/pinboardListView'
-], function ($, _, Backbone, PinboardListView) {
+  'pinboard/pinboardWidgetView'
+], function ($, _, Backbone, PinboardWidgetView) {
   'use strict';
   return {
     initialize: function () {
-      var pinboardListView = new PinboardListView({
-        el: $('#pinboardList')
+      var pinboardWidgetView = new PinboardWidgetView({
+        el: $('#pinboardWidget')
       });
+      pinboardWidgetView.render();
     }
   };
 });

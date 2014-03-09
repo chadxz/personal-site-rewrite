@@ -3,20 +3,22 @@ define([
   'underscore',
   'backbone',
   'pinboard/pinboardModel',
-  'text!pinboard/pinboardItem.html'
+  'text!pinboard/pinboardItem.html',
 ], function ($, _, Backbone, PinboardModel, pinboardItemTemplate) {
   'use strict';
-  var PinboardView = Backbone.View.extend({
+  
+  var PinboardItemView = Backbone.View.extend({
 
     tagName: 'li',
 
     template: _.template(pinboardItemTemplate),
 
     render: function () {
-      this.$el.html(this.template(this.model.attributes));
+      var attributes = this.model.toJSON({ computedFields: true });
+      this.$el.html(this.template(attributes));
       return this;
     }
   });
 
-  return PinboardView;
+  return PinboardItemView;
 });
