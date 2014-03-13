@@ -4,8 +4,14 @@
   "description": "",
   "private": true,
   "devDependencies": {
-    "gulp-connect": "~1.0.6",
-    "gulp": "~3.5.5"
+    "gulp": "^3.5.5",
+    "requirejs": "^2.1.11",
+    "tiny-lr": "0.0.5",
+    "express": "^3.4.8",
+    "gulp-util": "^2.2.14"
+  },
+  "scripts": {
+    "build": "r.js -o app/js/build.js"
   },
   "author": "Chad McElligott <chad.mcelligott@gmail.com>",
   "license": "MIT"

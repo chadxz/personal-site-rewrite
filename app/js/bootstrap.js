@@ -1,11 +1,11 @@
 require.config({
   paths: {
-    jquery: '/components/jquery/dist/jquery',
-    underscore: '/components/underscore/underscore',
-    backbone: '/components/backbone/backbone',
-    text: '/components/requirejs-text/text',
-    moment: '/components/moment/moment',
-    'backbone-computedfields': '/components/backbone-computedfields/lib/amd/backbone.computedfields',
+    jquery: '../components/jquery/dist/jquery',
+    underscore: '../components/underscore/underscore',
+    backbone: '../components/backbone/backbone',
+    text: '../components/requirejs-text/text',
+    moment: '../components/moment/moment',
+    'backbone-computedfields': '../components/backbone-computedfields/lib/amd/backbone.computedfields',
   },
   shim: {
     moment: {
