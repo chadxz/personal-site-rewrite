@@ -8,7 +8,12 @@
     "requirejs": "^2.1.11",
     "tiny-lr": "0.0.5",
     "express": "^3.4.8",
-    "gulp-util": "^2.2.14"
+    "gulp-util": "^2.2.14",
+    "gulp-useref": "git+https://github.com/jonkemp/gulp-useref.git#v0.2.1",
+    "gulp-filter": "^0.3.1",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-replace": "^0.2.0"
   },
   "scripts": {
     "build": "r.js -o app/js/build.js"
