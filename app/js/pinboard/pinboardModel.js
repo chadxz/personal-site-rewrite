@@ -32,7 +32,7 @@ define([
         },
         toJSON: false
       }
-    },
+    }
   });
 
   return PinboardModel;

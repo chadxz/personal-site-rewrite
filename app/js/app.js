@@ -2,15 +2,20 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'pinboard/pinboardWidgetView'
-], function ($, _, Backbone, PinboardWidgetView) {
+  'pinboard/pinboardWidgetView',
+  'lastfm/lastfmWidgetView'
+], function ($, _, Backbone, PinboardWidgetView, LastfmWidgetView) {
   'use strict';
+
   return {
     initialize: function () {
-      var pinboardWidgetView = new PinboardWidgetView({
+      new PinboardWidgetView({
         el: $('#pinboardWidget')
-      });
-      pinboardWidgetView.render();
+      }).render();
+
+      new LastfmWidgetView({
+        el: $('#lastfmWidget')
+      }).render();
     }
   };
 });

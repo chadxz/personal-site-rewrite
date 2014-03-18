@@ -1,0 +1,7 @@
+<a href="<%= artist.url %>" title="<%= artist.name %> on Last.fm"><%= artist.name %></a> -
+<a href="<%= url %>" title="<%= name %> on Last.fm"><%= name %></a>
+<% if (isPlaying) { %>
+<small><span class="light">&#x266C</span> now playing <span class="light">&#x266C</span></small>
+<% } else { %>
+<small><abbr title="<%= formattedDateTime %>"><%= relativeDateTime %></abbr></small>
+<% } %>

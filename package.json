@@ -16,6 +16,7 @@
     "gulp-useref": "^0.2.2"
   },
   "scripts": {
+    "start": "gulp",
     "build": "r.js -o app/js/build.js"
   },
   "author": "Chad McElligott <chad.mcelligott@gmail.com>",

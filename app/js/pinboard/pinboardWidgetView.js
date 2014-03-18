@@ -14,7 +14,7 @@ define([
     render: function () {
       this.$el.html(this.template());
       var pinboardListView = new PinboardListView({
-        el: $('#pinboardList')
+        el: this.$('#pinboardList')
       });
       pinboardListView.render();
     }
