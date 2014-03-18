@@ -16,8 +16,7 @@
     "gulp-useref": "^0.2.2"
   },
   "scripts": {
-    "start": "gulp",
-    "build": "r.js -o app/js/build.js"
+    "start": "gulp"
   },
   "author": "Chad McElligott <chad.mcelligott@gmail.com>",
   "license": "MIT"
