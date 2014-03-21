@@ -12,12 +12,17 @@ gulp.task('build-clean', function () {
       .pipe(clean());
 });
 
-gulp.task('build-copy-fonts', function () {
+gulp.task('copy-fonts', ['build-clean'], function () {
   return gulp.src('app/components/fontawesome/fonts/*')
       .pipe(gulp.dest('app-dist/fonts/'));
 });
 
-gulp.task('build-css-html', function () {
+gulp.task('copy-images', ['build-clean'], function () {
+  return gulp.src('app/images/*')
+      .pipe(gulp.dest('app-dist/images/'));
+})
+
+gulp.task('build-css-html', ['build-clean'], function () {
   // read build: statements from html
   // and transform them with other gulp plugins
   return gulp.src('app/*.html')
@@ -56,7 +61,7 @@ gulp.task('build-js', ['build-css-html'], function (done) {
   })
 });
 
-gulp.task('build', ['build-clean', 'build-css-html', 'build-js', 'build-copy-fonts']);
+gulp.task('build', ['build-clean', 'build-css-html', 'build-js', 'copy-fonts', 'copy-images']);
 
 gulp.task('serve-dev', function () {
   var rootPath = 'app';

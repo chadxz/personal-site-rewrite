@@ -88,3 +88,11 @@ figcaption {
   color: #4f4f4f;
   margin-top: 5px;
 }
+
+.lastfm-track-list {
+  background: url('/images/lfm.png') no-repeat top right;
+}
+
+.pinboard-list {
+  background: url('/images/pb.png') no-repeat top right;
+}
