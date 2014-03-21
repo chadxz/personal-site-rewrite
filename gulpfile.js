@@ -59,17 +59,19 @@ gulp.task('build-js', ['build-css-html'], function (done) {
 gulp.task('build', ['build-clean', 'build-css-html', 'build-js', 'build-copy-fonts']);
 
 gulp.task('serve-dev', function () {
-  var rootPath = './app';
+  var rootPath = 'app';
   var watchGlob = [
-    rootPath + '/**/*.{html,js}',
+    rootPath + '/**/*.{html,js,css}',
     '!' + rootPath + '/components/**/*'
   ];
 
   server.serveAndWatch(rootPath, watchGlob);
+  // purposefully not returning anything. the task should run indefinitely
 });
 
 gulp.task('serve-dist', ['build'], function () {
   server.serve('./app-dist');
+  // purposefully not returning anything. the task should run indefinitely
 });
 
 gulp.task('default', ['serve-dev']);

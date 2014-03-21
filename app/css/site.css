@@ -6,6 +6,10 @@ p {
     font-size: 1.125em;
 }
 
+.page-title {
+  text-align: center;
+}
+
 .page-title a:link,
 .page-title a:active,
 .page-title a:visited,
