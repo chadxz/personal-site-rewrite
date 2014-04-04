@@ -1,21 +1,16 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'pinboard/pinboardWidgetView',
-  'lastfm/lastfmWidgetView'
-], function ($, _, Backbone, PinboardWidgetView, LastfmWidgetView) {
-  'use strict';
+'use strict';
+var $ = require('jquery');
+var LastfmWidgetView = require('./lastfm/lastfmWidgetView');
+var PinboardWidgetView = require('./pinboard/pinboardWidgetView');
 
-  return {
-    initialize: function () {
-      new PinboardWidgetView({
-        el: $('#pinboardWidget')
-      }).render();
+module.exports = {
+  initialize: function () {
+    new PinboardWidgetView({
+      el: $('#pinboardWidget')
+    }).render();
 
-      new LastfmWidgetView({
-        el: $('#lastfmWidget')
-      }).render();
-    }
-  };
-});
+    new LastfmWidgetView({
+      el: $('#lastfmWidget')
+    }).render();
+  }
+};

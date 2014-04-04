@@ -1,24 +1,20 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'pinboard/pinboardModel',
-  'text!pinboard/pinboardItem.html',
-], function ($, _, Backbone, PinboardModel, pinboardItemTemplate) {
-  'use strict';
-  
-  var PinboardItemView = Backbone.View.extend({
+'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var PinboardModel = require('./pinboardModel');
+var pinboardItemTemplate = require('raw!./pinboardItem.html');
 
-    tagName: 'li',
+module.exports = Backbone.View.extend({
 
-    template: _.template(pinboardItemTemplate),
+  tagName: 'li',
 
-    render: function () {
-      var attributes = this.model.toJSON({ computedFields: true });
-      this.$el.html(this.template(attributes));
-      return this;
-    }
-  });
+  template: _.template(pinboardItemTemplate),
 
-  return PinboardItemView;
+  render: function () {
+    var attributes = this.model.toJSON({ computedFields: true });
+    this.$el.html(this.template(attributes));
+    return this;
+  }
 });

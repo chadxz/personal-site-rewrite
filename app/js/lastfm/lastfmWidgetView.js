@@ -1,22 +1,20 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'text!lastfm/lastfmWidget.html',
-  'lastfm/trackListView'
-], function ($, _, Backbone, lastfmWidgetTemplate, TrackListView) {
-  'use strict';
+'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var lastfmWidgetTemplate = require('raw!./lastfmWidget.html');
+var TrackListView = require('./trackListView');
 
-  return Backbone.View.extend({
+module.exports = Backbone.View.extend({
 
-    template: _.template(lastfmWidgetTemplate),
+  template: _.template(lastfmWidgetTemplate),
 
-    render: function () {
-      this.$el.html(this.template());
-      var trackListView = new TrackListView({
-        el: this.$('#trackList')
-      });
-      trackListView.render();
-    }
-  });
+  render: function () {
+    this.$el.html(this.template());
+    var trackListView = new TrackListView({
+      el: this.$('#trackList')
+    });
+    trackListView.render();
+  }
 });

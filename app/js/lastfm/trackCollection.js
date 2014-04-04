@@ -1,13 +1,11 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'lastfm/trackModel'
-], function ($, _, Backbone, TrackModel) {
-  'use strict';
-  
-  return Backbone.Collection.extend({
-    model: TrackModel,
-    url: '/lastfm'
-  });
+'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var TrackModel = require('./trackModel');
+
+module.exports = Backbone.Collection.extend({
+  model: TrackModel,
+  url: '/lastfm'
 });

@@ -1,8 +1,7 @@
-define(function () {
-  'use strict';
-  return {
-    api: {
-      url: 'http://immense-refuge-7911.herokuapp.com'
-    }
-  };
-});
+'use strict';
+
+module.exports = {
+  api: {
+    url: 'http://immense-refuge-7911.herokuapp.com'
+  }
+};

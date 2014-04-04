@@ -1,22 +1,20 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'lastfm/trackModel',
-  'text!lastfm/track.html',
-], function ($, _, Backbone, TrackModel, trackTemplate) {
-  'use strict';
-  
-  return Backbone.View.extend({
+'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var TrackModel = require('raw!./trackModel');
+var trackTemplate = require('raw!./track.html');
 
-    tagName: 'li',
+module.exports = Backbone.View.extend({
 
-    template: _.template(trackTemplate),
+  tagName: 'li',
 
-    render: function () {
-      var attributes = this.model.toJSON({ computedFields: true });
-      this.$el.html(this.template(attributes));
-      return this;
-    }
-  });
+  template: _.template(trackTemplate),
+
+  render: function () {
+    var attributes = this.model.toJSON({ computedFields: true });
+    this.$el.html(this.template(attributes));
+    return this;
+  }
 });

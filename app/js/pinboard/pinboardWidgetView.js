@@ -1,24 +1,20 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'text!pinboard/pinboardWidget.html',
-  'pinboard/pinboardListView'
-], function ($, _, Backbone, pinboardWidgetTemplate, PinboardListView) {
-  'use strict';
+'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var pinboardWidgetTemplate = require('raw!./pinboardWidget.html');
+var PinboardListView = require('./pinboardListView');
 
-  var PinboardWidgetView = Backbone.View.extend({
+module.exports = Backbone.View.extend({
 
-    template: _.template(pinboardWidgetTemplate),
+  template: _.template(pinboardWidgetTemplate),
 
-    render: function () {
-      this.$el.html(this.template());
-      var pinboardListView = new PinboardListView({
-        el: this.$('#pinboardList')
-      });
-      pinboardListView.render();
-    }
-  });
-
-  return PinboardWidgetView;
+  render: function () {
+    this.$el.html(this.template());
+    var pinboardListView = new PinboardListView({
+      el: this.$('#pinboardList')
+    });
+    pinboardListView.render();
+  }
 });
