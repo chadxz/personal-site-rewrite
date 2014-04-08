@@ -7,9 +7,19 @@
     "webpack": "^1.1.3",
     "bower": "^1.3.1",
     "raw-loader": "^0.5.1",
-    "webpack-dev-server": "^1.2.7"
+    "webpack-dev-server": "^1.2.7",
+    "gulp": "^3.6.0",
+    "gulp-util": "^2.2.14",
+    "node-static": "^0.7.3",
+    "gulp-useref": "^0.3.1",
+    "gulp-minify-css": "^0.3.1",
+    "gulp-filter": "^0.4.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-replace": "^0.2.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --content-base app/ --devtool=eval --debug"
   },
   "author": "Chad McElligott <chad.mcelligott@gmail.com>",
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }

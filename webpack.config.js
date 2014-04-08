@@ -1,11 +1,15 @@
 'use strict';
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: './app/js/bootstrap.js',
   output: {
-    path: './app/js/',
-    filename: 'bundle.js'
+    // the path to put the built file
+    path: path.join(__dirname, 'app-dist/'),
+
+    // the name of the file to be built
+    filename: 'production.js'
   },
   resolve: {
     alias: {
